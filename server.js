@@ -10,6 +10,29 @@ app.get("/test", function (request, response) {
   response.end("Hello " + user_name + "!");
 });
 
+const swaggerUi = require('swagger-ui-express');
+swaggerDocument = require('./swagger.json');
+app.use(
+  '/api-docs',
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerDocument)
+);
+
+
+app.get("/random/basic", function (request, response) {
+  var max = request.query.number;
+  console.log(max)
+  if(max===undefined){
+    max=100
+  }
+  console.log(max)
+  let ran=Math.floor(Math.random() * max);
+  console.log(ran)
+
+  response.end(ran.toString());
+});
+
+
 app.listen(port);
 console.log("Listening on port ", port);
 

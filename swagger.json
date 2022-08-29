@@ -1,0 +1,39 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0", 
+      "title": "My User Project CRUD",
+      "description": "My User Project Application API",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:8080",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "Randomizer",
+        "description": "API for Great Randomization"
+      }
+    ],
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "paths": {
+        "/random/basic": {
+            "get": {
+                "tags": [
+                    "Random Number Service"
+                ],
+                "summary": "Generates an awesome random number",
+                "responses": {
+                    "200": {
+                        "description": "This service generates a random number without any further needs"
+                    }
+                }
+            }
+        }
+    }
+
+   }
